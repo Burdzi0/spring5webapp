@@ -1,10 +1,8 @@
 package com.burdzi0.spring5webapp.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity
 public class Publisher {
 
 	@Id
@@ -14,7 +12,7 @@ public class Publisher {
 	private String name;
 	private String address;
 
-	@OneToOne
+	@OneToOne(mappedBy = "publisher")
 	private Book book;
 
 	public Publisher(String name, String address) {

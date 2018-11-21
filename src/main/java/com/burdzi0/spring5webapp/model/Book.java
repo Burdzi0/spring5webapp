@@ -22,9 +22,15 @@ public class Book {
 	private Set<Author> authors = new HashSet<>();
 
 	@OneToOne
+	@JoinColumn(name = "publisher_fk")
 	private Publisher publisher;
 
 	public Book() {
+	}
+
+	public Book(String title, String isbn) {
+		this.title = title;
+		this.isbn = isbn;
 	}
 
 	public Book(String title, String isbn, Publisher publisher) {
